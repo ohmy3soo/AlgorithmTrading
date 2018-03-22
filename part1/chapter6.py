@@ -1,5 +1,5 @@
-from part1.ClassModule import BusinessCard
-from part1.ClassModule import Myclass
+
+from part1.ClassModule import *
 
 member1 = BusinessCard()
 print(member1)
@@ -25,3 +25,43 @@ member1.print_info()
 #inst1 = Myclass()
 inst1 = Myclass("Kangsan Lee", "kangsan.lee", "USA")
 inst1.print_info()
+
+
+print('\n\n')
+
+print(Stock.__dict__)
+
+s1 = Stock()
+s2 = Stock()
+print(id(s1))
+print(id(s2))
+
+print(dir())
+print(s1.__dict__)
+print(s2.__dict__)
+
+s1.market = "kosdaq"
+print(s1.__dict__)
+print(s2.__dict__)
+print(s2.market)
+# 인스턴스의 네임스페이스에 해당 이름이 없으면
+# 클래스의 네임스페이스로 이동
+
+
+
+print('\n\n')
+
+father = Parent()
+father.can_sing()
+
+child1 = LuckyChild()
+child1.can_sing()
+
+child2 = LuckyChild2()
+child2.can_sing()
+child2.can_dance()
+
+'''
+child3 = UnLuckyChild()
+child3.can_sing()   # AttributeError: 'UnLuckyChild' object has no attribute 'can_sing'
+'''
