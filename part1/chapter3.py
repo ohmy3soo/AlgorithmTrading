@@ -76,6 +76,8 @@ print(stock_list)
 price_list = list(cur_price.values())
 print(price_list)
 
+
+#if 'Samsung' in cur_price:
 if 'Samsung' in cur_price.keys():
     print("'Samsung' is in cur_price.keys()")
 else:
@@ -83,5 +85,41 @@ else:
 
 
 myDict = {'a': 1, 'b': 2, 'c': 3, 'a':4}
+if 'a' in myDict.keys():
+    print("lll")
 print(myDict['a'])      # 4
 # value를 통해 key를 찾으려면 반복문을 통해 하나하나 확인해야 한다.
+
+
+
+
+########## 연습 문제 ##########
+
+print('3-1')
+naver_closing_price = [474500, 461500, 501000, 500500, 488500]
+
+
+print('3-2')
+max = max(naver_closing_price)
+print(max)
+
+
+print('3-3')
+min = min(naver_closing_price)
+print(min)
+
+
+print('3-4')
+print(max-min)
+
+
+print('3-5')
+print(naver_closing_price[2])
+
+
+print('3-6')
+naver_closing_price2 = {'09/07': 474500, '09/08': 461500, '09/09': 501000,
+                        '09/10': 500500, '09/11': 488500}
+
+print('3-7')
+print(naver_closing_price2['09/09'])
