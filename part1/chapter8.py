@@ -42,13 +42,39 @@ def delete_contact(contact_list, name):
             del contact_list[i]
 
 
+def store_contact(contact_list):
+    f = open("contact_db.txt", "wt")
+    for contact in contact_list:
+        f.write(contact.name + '\n')
+        f.write(contact.phone_number + '\n')
+        f.write(contact.e_mail + '\n')
+        f.write(contact.addr + '\n')
+    f.close()
+
+
+def load_contact(contact_list):
+    f = open("contact_db.txt", "rt")
+    lines = f.readlines()
+    num = len(lines) / 4
+    num = int(num)
+
+    for i in range(num):
+        name = lines[4*i].rstrip('\n')
+        phone = lines[4*i+1].rstrip('\n')
+        email = lines[4*i+2].rstrip('\n')
+        addr = lines[4*i+3].rstrip('\n')
+        contact = Contact(name, phone, email, addr)
+        contact_list.append(contact)
+    f.close()
+
+
 def run():
     #kim = Contact('김일구', '010-8812-1193', 'ilgu.kim@python.com', 'Seoul')
     #kim.print_info()
 
     #set_contact()
     contact_list = []
-
+    load_contact(contact_list)
     while 1:
         menu = print_menu()
 
@@ -57,13 +83,14 @@ def run():
             contact_list.append(contact)
 
         elif menu == 2:
-            print_contact()
+            print_contact(contact_list)
 
         elif menu == 3:
             name = input("Name: ")
             delete_contact(contact_list, name)
 
         elif menu == 4:
+            store_contact(contact_list)
             break
 
 
