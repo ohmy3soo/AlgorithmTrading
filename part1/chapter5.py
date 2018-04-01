@@ -78,10 +78,100 @@ for x in os.listdir():
 
 
 # 내장함수
-input = [5, 2, 3, 1]
-print(sorted(input))
-print(min(input))
-print(max(input))
+input_list = [5, 2, 3, 1]
+print(sorted(input_list))
+print(min(input_list))
+print(max(input_list))
 
-for i, num in enumerate(input):
+for i, num in enumerate(input_list):
     print(i, num)
+
+
+
+
+########## 연습 문제 ##########
+print('\n\n')
+print('5-1')
+def myaverage(a, b):
+    return (a+b)/2
+print("A: 5, B: 12")
+print(myaverage(5, 12))
+
+
+print('\n\n')
+print('5-2')
+def get_max_min(data_list):
+    return max(data_list), min(data_list)
+
+data_list = [4, 2, 1, 8, 6, 5, 4, 3 ,2, 9, 0]
+print("DATA_LIST: [4, 2, 1, 8, 6, 5, 4, 3 ,2, 9, 0]")
+print(get_max_min(data_list))
+
+
+print('\n\n')
+print('5-3')
+def get_txt_list(path):
+    txtList = []
+    fileList = os.listdir(path)
+    for file in fileList:
+        if file.endswith('.txt'):
+            txtList.append(file)
+    return txtList
+
+print(get_txt_list(os.getcwd()))
+
+print('\n\n')
+print('5-4')
+def getBMI(kg, cm):
+    kg = float(kg)
+    cm = float(cm)
+
+    m = cm/100
+
+    BMI = kg / (m**2)
+    print("BMI:", BMI)
+    if BMI < 18.5:
+        print('마른체형')
+    elif BMI < 25.0:
+        print('표준')
+    elif BMI < 30.0:
+        print('비만')
+    else:
+        print('고도비만')
+
+print("KG: 74, CM: 173")
+getBMI(74, 173)
+
+
+print('\n\n')
+print('5-5')
+'''
+while True:
+    getBMI(input('몸무게(kg): '), input('키(cm): '))
+'''
+
+print('\n\n')
+print('5-6')
+def get_triangle_area(width, height):
+    return width*height/2
+print("WIDTH: 20, HEIGHT: 10")
+print(get_triangle_area(20, 10))
+
+
+print('\n\n')
+print('5-7')
+def add_start_to_end(start, end):
+    #return (start+end)/2 * (end-start+1)
+     return sum(range(start, end+1))
+print("START: 10, END: 17")
+print(add_start_to_end(10, 17))
+
+
+print('\n\n')
+print('5-8')
+input_list = ['Seoul', 'Daegu', 'Kwangju', 'Jeju']
+output_list = []
+for item in input_list:
+    output_list.append(item[:3])
+
+print(output_list)

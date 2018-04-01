@@ -1,5 +1,5 @@
 
-
+import os
 
 # 01 파일 읽기
 
@@ -36,3 +36,28 @@ f.close()
 f = open('/Users/kihunahn/PycharmProjects/AlgorithmTrading/part1/sell_list.txt', 'wt')
 f.write('삼성전자\n')
 f.write('SK하이닉스\n')
+
+
+
+
+########## 연습 문제 ##########
+print('\n\n')
+print('7-1')
+f = open('number.txt', 'wt')
+for i in range(1,11):
+    #f.write(str(i) + '\n')
+    f.write("%d\n" %i)
+f.close()
+
+
+print('\n\n')
+print('7-2')
+f = open('flist.txt', 'wt')
+test_path = os.getcwd()
+fileList = os.listdir(test_path)
+for item in fileList:
+    #f.write(item + '\n')
+    f.write("%s\n" % item)
+f.close()
+
+

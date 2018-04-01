@@ -1,0 +1,15 @@
+__pycache__
+buy_list.txt
+chapter2.py
+chapter3.py
+chapter4.py
+chapter5.py
+chapter6.py
+chapter7.py
+chapter8.py
+ClassModule.py
+contact_db.txt
+flist.txt
+number.txt
+sell_list.txt
+stock.py
