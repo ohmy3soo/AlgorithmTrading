@@ -45,7 +45,8 @@ class MyWindow(QWidget):
     def setupUI(self):
         self.setGeometry(800, 200, 300, 300)
         self.setWindowTitle("PyStock v0.1")
-        self.setWindowIcon(QIcon('icon.jpeg'))
+        # MAC에서는 안뜬다 ...
+        self.setWindowIcon(QIcon('icon.png'))
 
         self.pushButton = QPushButton("Sign In")
         self.pushButton.clicked.connect(self.pushButtonClicked)
